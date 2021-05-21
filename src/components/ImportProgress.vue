@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="inventory body__block">
+    <div>
       <div class="wrapper">
         <div class="import-progress">
           <div class="import-header">Импорт данных</div>
@@ -77,7 +77,7 @@ export default {
 }
 .progress {
   overflow: hidden;
-  height: 20px;
+  height: 15px;
   width: 100%;
   border-radius: 10px;
   background-image: linear-gradient(to bottom, #ccc 0%, #ddd 100%);
@@ -90,7 +90,7 @@ export default {
   box-sizing: border-box;
   background-color: #6f64f8;
   background-size: 40px 40px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 30%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 34%, transparent 34%, transparent 46%, rgba(0, 0, 0, 0.1) 46%, rgba(0, 0, 0, 0.1) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 80%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.1) 84%, transparent 84%, transparent 96%, rgba(0, 0, 0, 0.1) 96%, rgba(0, 0, 0, 0.1));
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   transition: width 200ms ease;

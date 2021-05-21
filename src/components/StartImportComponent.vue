@@ -80,6 +80,8 @@
 
       </div>
       <Import-progress/>
+      <Information-settings/>
+
     </div>
   </div>
 </template>
@@ -87,11 +89,13 @@
 <script>
 
 import ImportProgress from './ImportProgress';
+import InformationSettings from './InformationSettingsComponent';
 
   export default {
 
     components:{
-      ImportProgress
+      ImportProgress,
+      InformationSettings
     },
 
     mounted() {
