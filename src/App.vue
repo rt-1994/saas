@@ -10,7 +10,7 @@
 <!--          <Inventory/>-->
         </main>
         <div class="tooltip__templates">
-          <p id="tooltip__content">  Всплывающее окно <br> Подсказка.<br>Может состоять из:<br>— 1<br>— двух<br>— даже трех пунктов!</p>
+          <p id="tooltip__content"> Всплывающее окно <br> Подсказка.<br>Может состоять из:<br>— 1<br>— двух<br>— даже трех пунктов!</p>
         </div>
         <div class="overlay"></div>
         <Channels/>
