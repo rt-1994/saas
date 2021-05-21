@@ -79,17 +79,26 @@
         </div>
 
       </div>
+      <Import-progress/>
     </div>
   </div>
 </template>
 
 <script>
+
+import ImportProgress from './ImportProgress';
+
   export default {
+
+    components:{
+      ImportProgress
+    },
+
     mounted() {
       let addFile = document.createElement('script')
       addFile.setAttribute('src', './assets/js/ad-file')
 
-      document.head.appendChild(addFile)
+      document.body.appendChild(addFile)
     }
   }
 </script>
@@ -292,7 +301,6 @@
 .form-item__input{
   display: none;
 }
-
 
 
 </style>
