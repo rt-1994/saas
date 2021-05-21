@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <div class="body">
-      <Left-nav-bar></Left-nav-bar>
+      <Left-nav-bar/>
       <div class="body__body">
         <Top-nav-bar></Top-nav-bar>
         <main class="main">
-          <Product-catalog></Product-catalog>
-          <Inventory></Inventory>
+          <Product-catalog/>
+          <Start-import-component/>
+<!--          <Inventory/>-->
         </main>
         <div class="tooltip__templates">
           <p id="tooltip__content">  Всплывающее окно <br> Подсказка.<br>Может состоять из:<br>— 1<br>— двух<br>— даже трех пунктов!</p>
         </div>
         <div class="overlay"></div>
-        <Channels></Channels>
+        <Channels/>
       </div>
     </div>
   </div>
@@ -22,7 +23,8 @@
 import LeftNavBar from './components/LeftNavBar'
 import TopNavBar from './components/TopNavBar'
 import ProductCatalog from './components/ProductCatalog'
-import Inventory from './components/Inventory'
+import StartImportComponent from './components/StartImportComponent'
+// import Inventory from './components/Inventory'
 import Channels from './components/Modals/Channels'
 
 
@@ -32,7 +34,7 @@ export default {
     LeftNavBar,
     TopNavBar,
     ProductCatalog,
-    Inventory,
+    StartImportComponent,
     Channels
   },
 
@@ -44,9 +46,12 @@ export default {
     main.setAttribute('src', './assets/js/main')
 
     let mainMin = document.createElement('script')
-    main.setAttribute('src', './assets/js/main.min')
+    mainMin.setAttribute('src', './assets/js/main.min')
 
-    document.body.appendChild(libs, main, mainMin)
+    let addFile = document.createElement('script')
+    addFile.setAttribute('src', './assets/js/ad-file')
+
+    document.body.appendChild(libs, main, mainMin, addFile)
   },
 }
 </script>
