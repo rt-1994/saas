@@ -24,6 +24,7 @@ import LeftNavBar from './components/LeftNavBar'
 import TopNavBar from './components/TopNavBar'
 import ProductCatalog from './components/ProductCatalog'
 import StartImportComponent from './components/StartImportComponent'
+
 // import Inventory from './components/Inventory'
 import Channels from './components/Modals/Channels'
 

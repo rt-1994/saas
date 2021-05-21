@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 $('#file').on('change', function() {
     var arrayFile = this.file, // массив с выбранными фалами
         formItem = this.parentNode, // родительский элемент, для того чтобы вставить список с файлами
