@@ -78,8 +78,8 @@ export default {
   height: 350px;
 }
 
-.information-settings-block input[type="checkbox"]:checked{
-  background: #6f64f8;
+.information-settings-block input,label:hover{
+  cursor: pointer;
 }
 
 .information-settings-block{
