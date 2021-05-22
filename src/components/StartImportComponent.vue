@@ -56,7 +56,7 @@
             </div>
             <div>
               <span>Настройки импорта</span>
-              <button class="notes-action">
+              <button class="notes-action" @click="arrowClick" v-bind:style="{ transform: rotateValue }">
                 <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.7778 0.75L5.88889 5.80747L1 0.75" stroke="#232323" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -99,7 +99,8 @@ import InformationSettings from './InformationSettingsComponent';
     data(){
       return{
         files: '',
-        picked: 'server'
+        picked: 'server',
+        rotateValue:''
       }
     },
 
@@ -109,8 +110,13 @@ import InformationSettings from './InformationSettingsComponent';
         return console.log(this.$refs.myFiles.files)
       },
 
-      showElements(){
-
+      arrowClick(){
+        if(this.rotateValue === 'rotate(0)'){
+          this.rotateValue = 'rotate(180deg)';
+        }
+        else{
+          this.rotateValue = 'rotate(0)'
+        }
       }
     }
   }
@@ -276,6 +282,8 @@ import InformationSettings from './InformationSettingsComponent';
   position: absolute;
   left: 50%;
   top: 0;
+  transform-origin: center;
+  transition: 1s;
 }
 
 .notes div:nth-child(1) .notes-action{
