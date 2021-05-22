@@ -33,9 +33,9 @@
               </div>
 
               <div class="add-link-item add-import">
-                <button class="form-control btn btn-bg btn--invers btn--min add-import"><label for="file">Загрузить файл</label></button>
-                <input class="form-item__input" id="file" type="file" name="file"/>
-
+               <label class="form-control btn btn-bg btn--invers add-import" for="file">Загрузить файл</label>
+                <input class="form-item__input" id="file" type="file" ref="myFiles" @change="previewFiles" name="file"/>
+                <label class="files-name" v-bind="files"><p>{{files}}</p></label>
               </div>
 
             </div>
@@ -97,12 +97,17 @@ import InformationSettings from './InformationSettingsComponent';
       ImportProgress,
       InformationSettings
     },
+    data(){
+      return{
+        files: ''
+      }
+    },
 
-    mounted() {
-      let addFile = document.createElement('script')
-      addFile.setAttribute('src', './assets/js/ad-file')
-
-      document.body.appendChild(addFile)
+    methods:{
+      previewFiles() {
+        this.files = this.$refs.myFiles.files[0].name
+        return console.log(this.$refs.myFiles.files)
+      },
     }
   }
 </script>
@@ -177,6 +182,30 @@ import InformationSettings from './InformationSettingsComponent';
 
 .add-import{
   display: none;
+  position: relative;
+  line-height: 2.7;
+
+}
+
+.add-import:hover{
+  cursor: pointer;
+}
+
+.files-name{
+  display: none;
+  background: #f1f1f1;
+  position: absolute;
+  width: 390px;
+  height: 36px;
+  line-height: 2.5;
+  text-align: left;
+  border-radius: 6px;
+  top: 0;
+  right: 0px;
+}
+
+.files-name p{
+  padding-left: 10px;
 }
 
 .add-clear,.add-plus{
