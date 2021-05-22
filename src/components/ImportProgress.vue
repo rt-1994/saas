@@ -4,9 +4,14 @@
       <div class="wrapper">
         <div class="import-progress">
           <div class="import-header">Импорт данных</div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 60%;"></div>
-            </div> <span>60%</span>
+          <div class="progress">
+            <div class="progress-bar" style="width: 100%;"></div>
+            <div class="progress-bar-product">
+              <span>Загрузка товаров: <label>90%</label></span>
+              <span>Ссылка: <label>http://www.</label></span>
+            </div>
+            <div class="progress-bar-foto"><span>Загрузка фото: <label>90%</label></span></div>
+          </div>
           <div class="import-info"><p><span>Называние поставщика: </span>Длинное называние поставщика из Киева</p></div>
         </div>
       </div>
@@ -28,7 +33,7 @@ export default {
   height: 150px;
 }
 
-.import-progress{
+.import-progress {
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -36,19 +41,35 @@ export default {
 }
 
 
-.import-progress{
+.import-progress {
   flex-basis: 15%;
 }
 
-.progress{
+.progress {
   flex-basis: 55%;
+  position: relative;
 }
 
-.import-info{
+.progress:after {
+  content: '60%';
+  position: absolute;
+  top: 0;
+  right: -50px;
+}
+
+.progress-bar-product {
+  margin: 40px 0 20px 0 ;
+}
+
+.progress-bar-product span:nth-child(1){
+  margin-right: 170px;
+}
+
+.import-info {
   flex-basis: 30%;
 }
 
-.import-info p{
+.import-info p {
   margin-left: 50px;
 }
 
@@ -67,6 +88,7 @@ export default {
     background-position: 0 0;
   }
 }
+
 @keyframes progress-bar-animate {
   from {
     background-position: 40px 0;
@@ -75,14 +97,15 @@ export default {
     background-position: 0 0;
   }
 }
+
 .progress {
-  overflow: hidden;
   height: 15px;
   width: 100%;
   border-radius: 10px;
   background-image: linear-gradient(to bottom, #ccc 0%, #ddd 100%);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 .progress-bar {
   width: 70%;
   height: 100%;
@@ -96,7 +119,6 @@ export default {
   transition: width 200ms ease;
   animation: progress-bar-animate 1s linear infinite;
 }
-
 
 
 </style>

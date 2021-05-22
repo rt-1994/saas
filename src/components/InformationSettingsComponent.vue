@@ -51,6 +51,13 @@
             <label for="month"><input type="radio" id="month" name="update">  Раз в месяц</label>
           </div>
         </div>
+
+        <div class="settings-buttons">
+          <button class="btn btn-bg add_button add_link">Сбросить все</button>
+          <button class="btn btn-bg btn--invers">Сохранить настройки</button>
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -68,11 +75,11 @@ export default {
 .wrapper {
   border-top: 1px #E1E1E1 solid;
   padding-top: 30px;
-  height: 300px;
+  height: 350px;
 }
 
-.information-settings-block input[type="checkbox"]:checked{
-  background: #6f64f8;
+.information-settings-block input,label:hover{
+  cursor: pointer;
 }
 
 .information-settings-block{
@@ -92,10 +99,12 @@ export default {
 .update-header,
 .settings-header{
   padding-bottom: 20px;
+  font-weight: 600;
 }
 
 .status-header{
   padding: 40px 0 20px 0;
+  font-weight: 600;
 }
 
 .information-block{
@@ -134,6 +143,14 @@ export default {
   margin-bottom: 10px;
 }
 
+.settings-buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settings-buttons button{
+  margin: 0 20px 20px 20px;
+}
 
 
 </style>
