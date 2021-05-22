@@ -5,7 +5,7 @@
         <div class="import">
           <p class="import_title">Подготовьте файл импорта следуя инструкции </p>
           <div class="inventory__btns">
-            <button class="btn btn-bg btn--invers btn--min">Начать импорт</button>
+            <button class="btn btn-bg btn--invers">Начать импорт</button>
           </div>
         </div>
 
@@ -13,17 +13,16 @@
         <div class="import_block">
 
           <div class="load_file">
-            <label><input type="radio" name="load">  Загрузить файл с сервера</label>
-            <label><input type="radio" name="load">  Загрузить файл с компьютера</label>
+            <label><input type="radio" id="server" checked name="load" value="server" v-model="picked">  Загрузить файл с сервера</label>
+            <label><input type="radio" id="computer" name="load" value="computer" v-model="picked">  Загрузить файл с компьютера</label>
             <button class="btn btn-bg add_button add_link">Добавить еще ссылку</button>
             <button class="btn btn-bg add_button add_file">Добавить еще файл</button>
           </div>
 
           <div class="supplier">
             <div class="add-link">
-              <div class="add-link-item">
+              <div class="add-link-item" v-if="picked === 'server'">
                 <input type="text" placeholder="Введите ссылку">
-                <button class="add-import btn btn-bg btn--invers btn--min">Начать импорт</button>
                 <button class="add-clear">Очистить</button>
                 <button class="add-plus">
                   <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +31,7 @@
                 </button>
               </div>
 
-              <div class="add-link-item add-import">
+              <div class="add-link-item add-import" v-if="picked === 'computer'">
                <label class="form-control btn btn-bg btn--invers add-import" for="file">Загрузить файл</label>
                 <input class="form-item__input" id="file" type="file" ref="myFiles" @change="previewFiles" name="file"/>
                 <label class="files-name" v-bind="files"><p>{{files}}</p></label>
@@ -99,7 +98,8 @@ import InformationSettings from './InformationSettingsComponent';
     },
     data(){
       return{
-        files: ''
+        files: '',
+        picked: 'server'
       }
     },
 
@@ -108,6 +108,10 @@ import InformationSettings from './InformationSettingsComponent';
         this.files = this.$refs.myFiles.files[0].name
         return console.log(this.$refs.myFiles.files)
       },
+
+      showElements(){
+
+      }
     }
   }
 </script>
@@ -181,7 +185,6 @@ import InformationSettings from './InformationSettingsComponent';
 }
 
 .add-import{
-  display: none;
   position: relative;
   line-height: 2.7;
 
@@ -192,7 +195,6 @@ import InformationSettings from './InformationSettingsComponent';
 }
 
 .files-name{
-  display: none;
   background: #f1f1f1;
   position: absolute;
   width: 390px;

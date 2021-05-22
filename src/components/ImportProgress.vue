@@ -5,7 +5,7 @@
         <div class="import-progress">
           <div class="import-header">Импорт данных</div>
           <div class="progress">
-            <div class="progress-bar" style="width: 100%;"></div>
+            <div class="progress-bar" style="width: 60%;"></div>
             <div class="progress-bar-product">
               <span>Загрузка товаров: <label>90%</label></span>
               <span>Ссылка: <label>http://www.</label></span>

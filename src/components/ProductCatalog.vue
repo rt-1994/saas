@@ -7,7 +7,7 @@
 <!--          <p class="catalog__breadcrumbs"><a class="catalog__breadcrumbs-item">Категория 1  </a><a class="catalog__breadcrumbs-item">Раздел 1 </a><a class="catalog__breadcrumbs-item">Подраздел 1 </a><a class="catalog__breadcrumbs-item">Товары </a></p>-->
         </div>
         <div class="catalog__head-right">
-          <button class="inventory__btn btn btn-bg btn--invers btn--min">Добавить</button>
+          <button class="inventory__btn btn btn-bg btn--invers">Добавить</button>
         </div>
       </div>
     </form>

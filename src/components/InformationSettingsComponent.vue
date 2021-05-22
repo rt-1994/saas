@@ -35,7 +35,7 @@
 
             <span class="status-header">Статус товаров, которых нет в файле</span>
 
-            <label for="not_changed"><input type="radio" id="not_changed" name="status">  Оставить без изменений</label>
+            <label for="not_changed"><input type="radio" checked id="not_changed" name="status">  Оставить без изменений</label>
             <label for="not_availability"><input type="radio" id="not_availability" name="status">  Нет в наличии</label>
             <label for="hidden"><input type="radio" id="hidden" name="status">  Скрытые</label>
             <label for="deleted"><input type="radio" id="deleted" name="status">  Удальенные</label>
@@ -44,7 +44,7 @@
 
             <div class="update-header">Автоматическое обновление ссылки</div>
 
-            <label for="never"><input type="radio" id="never" name="update">  Никогда</label>
+            <label for="never"><input type="radio" checked id="never" name="update">  Никогда</label>
             <label for="hour"><input type="radio" id="hour" name="update">  Раз 4 часа</label>
             <label for="day"><input type="radio" id="day" name="update">  Раз в день</label>
             <label for="week"><input type="radio" id="week" name="update">  Раз в неделю</label>
